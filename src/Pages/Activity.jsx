@@ -1,50 +1,67 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Footer from '../Pages/Footer';
-// import {Link} from 'react-router-dom';
+import Marquee from "react-fast-marquee";
 import Navbar from './Navbar';
 
 export default function Activity () {
             
     return (
-    <div>
-        <Navbar />
-        <div className="container">
-          <div className="main--contact">
-            <h4>Remplissez notre formulaire de contact</h4>
-            <div className="main--contact--content">
-                <div className="main--contact--content--left">
-                  <form>
-                    <div class="mb-3">
-                      <label for="exampleInputEmail1" className="form-label">Noms complets</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
-                    </div>
-                    <div class="mb-3">
-                      <label for="exampleFormControlInput1" className="form-label">Email address</label>
-                      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"/>
-                    </div>
-                    <div class="mb-3">
-                      <label for="exampleFormControlInput1" className="form-label">Numéro de téléphone</label>
-                      <input type="number" className="form-control" id="exampleFormControlInput1" placeholder=""/>
-                    </div>
-                    <div className="mb-3">
-                      <label for="exampleFormControlTextarea1" className="form-label">Votre message</label>
-                      <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                    </div>
-                    <button type="submit" className="btn btn-primary">Envoyer</button>
-                  </form>
-                </div>
-                <div className="main--contact--content--right">
-                  <p>Aidez-nous à mieux comprendre vos besoins</p>
-                  <p>Adresse : Cocody Angré 7eme Tranche / Abidjan – Plateau – 01 BP 2076 Abidjan 01</p>
-                  <p>Tel : +225 07 77 88 00 82 / +225 07 89 80 08 62</p>
-                  <p> E-mail : sci-mayedo@immobilier.com</p>
-                  <p>site web : www.sci-mayedo.com</p>
-                </div>
+      <div>
+      <Marquee className="marquee">
+              I can be a React component, multiple React components, or just some text.
+       </Marquee>
+  <Navbar/>
+  <div className="container">
+  <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+      <li class="breadcrumb-item"><Link to='/'>Home</Link></li>
+      <li class="breadcrumb-item active" aria-current="page"> Nos activités</li>
+  </ol>
+  </nav>
+      <div className='container__content'>
+      <h3 className='container__header'> Nos activités</h3>
+            <p>Miami Beach vous propose des activités gratuites pour les résidents de l'hôtel comme:</p>
+            <p>Terrain de pétanque</p>
+            <p>Jeux de cartes divers</p>
+            <p>Terrain de volley et Badminton</p>
+            <p>Canoé, pédalo et balancoire de cocotier</p>
+            <p>Massage (payant directement à la masseuse)</p>
+            <p>Jeux de société.. ou bien encore des jeux traditionnel de la côte d'ivoire comme l'Awale...</p>
+      </div>
+  </div>
+      <div className="container__cards">
+            <div className="container__images">
+               <div className="images_box">
+                  <img src="https://sncdn.com/imagecache/db/id/3928026/6584392a.jpg" alt="" />
+               </div>
+               <div className="images_box">
+                  <img src="http://www.hotel-zion.com/img/04-activitesNew.jpg" alt="" />
+               </div>
+               <div className="images_box">
+                  <img src="http://www.hotel-zion.com/img/06-activitesNew.jpg" alt="" />
+               </div>
+               <div className="images_box">
+                  <img src="https://exp.cdn-hotels.com/hotels/2000000/1210000/1207000/1206907/bbb5cfab_z.jpg?impolicy=fcrop&w=500&h=333&q=medium" alt="" />
+               </div>
+
+               <div className="images_box">
+                  <img src="https://coucoue-lodge.com/wp-content/uploads/2013/04/sports-loisirs-Assinie-Hotel-Coucoue-Lodge-18-1030x607.jpg" alt="" />
+               </div>
+               <div className="images_box">
+                  <img src="https://coucoue-lodge.com/wp-content/uploads/2013/04/Bar-Assinie-Le-Margouillat-Hotel-Coucoue-Lodge-08-1030x685.jpg" alt="" />
+               </div>
+               <div className="images_box">
+                  <img src="https://levoyageducalao.com/wp-content/uploads/2019/01/IMG_1433.jpg" alt="" />
+               </div>
+               <div className="images_box">
+                  <img src="https://media-cdn.tripadvisor.com/media/photo-s/06/28/62/d6/piscine.jpg" alt="" />
+               </div>
+
             </div>
-          </div>
-        </div>
-        <Footer/>
-    </div>
+      </div>
+<Footer/>
+</div>
     );
 }
 

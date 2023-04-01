@@ -52,7 +52,6 @@ const affi = ()=> {
     return (
       <div>
       <header>
-
         <div className='navbar'>
           <div className="navbar--left">
           <div className='icon--menu' onClick={showMenu}>

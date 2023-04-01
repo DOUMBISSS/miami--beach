@@ -16,8 +16,6 @@ export default function Restaurant() {
     const products = useSelector(state=>state.categoryReducer.products);
     const keys = ["title","brand","categorie","reference"];
     const [items,setCat]=useState(products);
-    const [brand,setBrand]=useState("");
-    const [search,setSearch]=useState("");
 
     const AddArticle = (id) => {
         dispatch(addToCart(id))
