@@ -28,6 +28,22 @@ export default function sssss () {
                     </div>
               <Link className='liste' to='/loginPage'><i className="fa-solid fa-user"></i>Mon compte</Link>
             </div>
+            <div className='container--article--left--part--container--image--box'>
+                      <img src={home.images[0]} alt="" />
+                      </div>
+                 
+                    <div className="thumb">
+                      {/* <div className="thumb__images">
+                        <img src="https://static.zara.net/photos///2023/V/0/2/p/6462/417/251/2/w/872/6462417251_2_1_1.jpg?ts=1678190846275" alt="" />
+                      </div> */}
+      
+                        {/* <img src="https://static.zara.net/photos///2023/V/0/2/p/6462/417/251/2/w/872/6462417251_2_1_1.jpg?ts=1678190846275" alt="" /> */}
+                        {/* <img src={home.images[1]} alt="" /> */}
+                        {home.images.map((item) =>   <div className="thumb__images">
+                          <img src={item.images} key={id}/>
+                      </div>
+                      )}
+                    </div>
          
           {/* </div> */}
             {/* <div className="rows">

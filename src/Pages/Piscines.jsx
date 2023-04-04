@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 import Marquee from "react-fast-marquee";
-import Filter from "./Filter";
 
 
 export default function Piscines (){

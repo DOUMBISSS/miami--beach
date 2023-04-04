@@ -1,40 +1,19 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from './Navbar';
-import {Link, useParams} from 'react-router-dom';
 import Footer from './Footer';
-import { useDispatch, useSelector } from 'react-redux';
-import { addToCart,getNew,getProduct } from '../Redux/actions';
-import Carousel from 'react-elastic-carousel';
-import ProductCart from '../components/ProductCart';
+import { useSelector } from 'react-redux';
+import { Link, useParams } from 'react-router-dom';
+import PropTypes from 'prop-types'
+import { A11y, Navigation, Pagination, Scrollbar, Thumbs } from 'swiper'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
 
 export default function Detail () {
-
-  const dispatch = useDispatch();
-  const article = useSelector(state=>state.categoryReducer.article);
-  const newArrivages = useSelector(state=>state.categoryReducer.newArrivages);
+  const homes = useSelector(state=>state.homeReducer.homes);
   let id = useParams().id
-
-  useEffect(() => {
-    fetch(`http://127.0.0.1:8080/products/${id}`)
-    .then((res)=>res.json())
-    .then((article)=>{dispatch(getProduct(article))
-    })
-    }, [id])
-
-    useEffect(() => {
-      fetch('http://127.0.0.1:8080/newarrivage')
-      .then((res)=>res.json())
-      .then((newArrivages)=>{dispatch(getNew(newArrivages))
-      })
-      .catch(e => { console.log(e)})
-      }, [])
-      
-
-    const AddArticle = (id) => {
-      dispatch(addToCart(id))
-    }
-
-            
+  let home =homes.find(home => home.id == id);
+  
     return (
      <div>
         <Navbar/>
@@ -42,46 +21,47 @@ export default function Detail () {
         <div className="container--header">
             {/* <h4 className="name--article">Iphone 14 Pro Max</h4> */}
           </div>
-          <ProductCart/>
               <div className="container--article">
                 <div className="container--article--left--part">
                   <div className="container--article--left--part--content">
                     <div className="container--article--left--part--container--image">  
-                      <div className='container--article--left--part--container--image--box'>
-                      <img src={`${process.env.PUBLIC_URL}/${article.img}`} alt="" />
+                    <div id="carouselExampleControlsNoTouching" className="carousel slide" data-bs-touch="false">
+                        <div className="carousel-inner">
+                          <div className="carousel-item active">
+                            <img src={home.img[0]} className="d-block w-100" alt="..."/>
+                          </div>
+                          <div className="carousel-item">
+                            <img src={home.img[1]}  className="d-block w-100" alt="..."/>
+                          </div>
+                          <div className="carousel-item">
+                            <img src={home.img[2]}  className="d-block w-100" alt="..."/>
+                          </div>
+                          {/* {home.img.map((item,i) => <div className="carousel-item active">
+                          <img src={item.img} key={i} className="d-block w-100" alt="..."/>
                       </div>
-                    </div>
-                    <div className="thumb">
-                      <div className="thumb__images">
-                        <img src="https://static.zara.net/photos///2023/V/0/2/p/6462/417/251/2/w/872/6462417251_2_1_1.jpg?ts=1678190846275" alt="" />
+                      )} */}
+                        </div>
+                        <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
+                          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span className="visually-hidden">Previous</span>
+                        </button>
+                        <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next">
+                          <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span className="visually-hidden">Next</span>
+                        </button>
                       </div>
-                      <div className="thumb__images">
-                        <img src="https://static.zara.net/photos///2023/V/0/2/p/6462/417/251/2/w/872/6462417251_2_1_1.jpg?ts=1678190846275" alt="" />
-                      </div>
-                    </div>
 
                   </div>
                 
                 </div>
+                </div>
 
                 <div className="container--article--right--part">
-                        {/* <p className='label'>{article.title}</p> */}
-                        <h4 className="name--article">{article.description}</h4>
-                        <p className="price"> {article.price} FCFA</p>  
-                        {/* <p className='label'>Marque : {article.brand}</p> */}
-                        {/* <p className='reference--article'>Référence: {article.reference}</p> */}
-                        {/* <p className='rating'>3 ratings</p> */}
-                        {/* <p className='availability'>En stock</p> */}
-                        <div className="col-3 col-md-12">
-                        <select class="form-select" aria-label="Default select example">
-                          <option selected>Selectionner la Taille</option>
-                          <option value="1">XS</option>
-                          <option value="2">S</option>
-                          <option value="3">M</option>
-                          <option value="3">L</option>
-                        </select>
-                        </div>              
-                          <button className='btn--add--cart' onClick={() => AddArticle(article)}> <i className="fa-sharp fa-solid fa-cart-plus"></i> Ajouter au panier</button>
+                        <p className='label'>{home.name}</p>
+                         {/* <h4 className="name--article">{home.description}</h4> */}
+                        <p className="price"> à partir de {home.price} FCFA</p>
+                        {/* <p className='rating'>3 ratings</p> */}            
+                        <Link to='/reserver'> <button className="btn__details" >Reserver en ligne</button></Link>
                     </div>         
               </div>
 

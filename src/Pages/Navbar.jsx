@@ -1,45 +1,18 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
-import { useSelector } from 'react-redux';
 import {Link, useNavigate} from 'react-router-dom';
-import { toast, ToastContainer } from 'react-toastify';
-import NavLogin from '../components/NavLogin';
 
 
 function Navbar ({search,setSearch}) {
-  const [user,setUser] = useState("");
-  const [nav , setNav] = useState(false);
-  const [cartShop , setCartShop] = useState(false);
   const [display,setDisplay]=useState(false);
-  const [success, setSuccess] = useState(false);
   const navigate = useNavigate();
-  const carts = useSelector(state => state.cartReducer.carts)
 
-    const openLog = ()=>{
-      setNav(true)
-    }
-
-    const showCart =()=>{
-      setCartShop (true)
-  }
-
-  const showProfil =()=>{
-    setDisplay(true)
-  }
-  const closeProfil =()=>{
-    setDisplay(false)
-  }
   const showMenu = () =>{
     setDisplay(true)
 }
 const affi = ()=> {
   setDisplay (false)
 }
-
-  const logout =()=>{
-    localStorage.clear();
-    navigate('/');
-  }
 
   const handleSearch = (e)=>{
     setSearch(e.target.value)
@@ -58,28 +31,20 @@ const affi = ()=> {
                <i className="fa-solid fa-bars"></i>
                </div>
             <div className="navbar--logo">
-              {/* <Link to="/"> <img src={`${process.env.PUBLIC_URL}/logo.jpg`} alt=""/></Link> */}
-              <Link to="/"> <img src="https://thumbs.dreamstime.com/b/lettrage-%C3%A9crit-par-main-de-miami-beach-108812095.jpg" alt=""/></Link>
+              <Link to="/"> <img src={`${process.env.PUBLIC_URL}/miami.jpeg`} alt=""/></Link>
             </div>
           </div>
           <div className="navbar--center">
             <div className="navbar--center--content">
               <Link className='liste' to="/">Accueil</Link>
-              <Link className='liste' to='/reserver'> Réserver</Link>
               <Link className='liste' to='/restaurant'> Restaurants & Bar</Link>
               <Link className='liste' to='/chambres'> Chambres </Link>
               <Link className='liste' to='/piscines'>Piscines</Link>
               <Link className='liste' to='/activity'> Activités</Link>
-              <div className="col-3 col-md-4">
-                <form class="d-flex" role="search">
-                <input class="form-control me-1" type="search" placeholder="Cherchez un produit , une marque ou une categorie..." aria-label="Search" onChange={handleSearch} value={search}/>
-                <button class="btn btn-outline-success" onClick={searching}>Search</button>
-              </form>
-              </div>
             </div>
             <div className='logo--resp'>
               <div className="navbar--logo--resp">
-                <Link to="/"> <img src={`${process.env.PUBLIC_URL}/logo.jpg`} alt=""/></Link>
+                <Link to="/"> <img src={`${process.env.PUBLIC_URL}/miami.jpeg`} alt=""/></Link>
               </div>
             </div>
                
@@ -88,7 +53,9 @@ const affi = ()=> {
         
           <div className="navbar--right">
           <div className="navbar--right--content">
-                       <Link className='liste' ><button onClick={openLog} className="btn--connexion"><i className="fa-solid fa-user"></i> Mon profil </button></Link>
+          <div className="col-6 col-md-2">
+          <i class="fa-solid fa-magnifying-glass"></i>
+              </div>
                   </div>
           </div>
          </div>
@@ -103,19 +70,16 @@ const affi = ()=> {
                             <Link className='liste' to="/">Accueil</Link>
                           </div>
                           <div className='menu__content__liste'>
-                            <Link className='liste' to='/men'> Réserver</Link>
-                          </div>
-                          <div className='menu__content__liste'>
-                            <Link className='liste' to='/women'>  Restaurants & Bar</Link>
+                            <Link className='liste' to='/restaurant'>  Restaurants & Bar</Link>
                           </div>
                             <div className='menu__content__liste'>
-                            <Link className='liste' to='/child'>Piscines</Link>
+                            <Link className='liste' to='/piscines'>Piscines</Link>
                             </div>
                             <div className='menu__content__liste'>
-                            <Link className='liste' to='/accessoires'>Chambres</Link>
+                            <Link className='liste' to='/chambres'>Chambres</Link>
                             </div>
                             <div className='menu__content__liste'>
-                            <Link className='liste' to='/accessoires'>Activités</Link>
+                            <Link className='liste' to='/activity'>Activités</Link>
                             </div>
                           <div className="col-12 col-md-12">
                             <form class="d-flex" role="search">

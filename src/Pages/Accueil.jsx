@@ -1,60 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import {Link} from 'react-router-dom';
 import 'animate.css';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import Slider from '../components/Slider';
-import { AddArticle, addToCart, getAllArticles, getALLLaptop, getCatArticlesSmart, getNew } from '../Redux/actions';
-import { useDispatch, useSelector } from 'react-redux';
-import ProductCart from '../components/ProductCart';
-import Carousel from 'react-elastic-carousel';
-import { toast, ToastContainer } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
 import Marquee from "react-fast-marquee";
 
 export default function Accueil () {
-    const dispatch = useDispatch()
-  const [display,setDisplay]= useState(false);
-
-  const [cart,setCart]= useState(false);
-
-  const closeCart = ()=> {
-    setCart (false)
-}
-const showCart =()=>{
-    setCart (true)
-}
-const AddArticle = (id) => {
-  dispatch(addToCart(id))
-}
-
-  const newArrivages = useSelector(state=>state.categoryReducer.newArrivages);
-  const categoryArticles = useSelector(state=>state.categoryReducer.categoryArticles);
-  const carts = useSelector(state => state.cartReducer.carts);
-//   const [articles,setCat]=useState(categoryArticles);
-// useEffect(()=>{
-//   localStorage.setItem("carts",JSON.stringify(carts));
-// },[])
-
-  useEffect(() => {
-    fetch('http://127.0.0.1:8080/newarrivage')
-    .then((res)=>res.json())
-    .then((newArrivages)=>{dispatch(getNew(newArrivages))
-    })
-    .catch(e => { console.log(e)})
-    }, [])
-
-    useEffect(() => {
-      fetch('http://127.0.0.1:8080/products')
-      .then((res)=>res.json())
-      .then((categoryArticles)=>{dispatch(getAllArticles(categoryArticles))
-      })
-      .catch(e => { console.log(e)})
-      }, [])
-
-      useEffect(()=>{
-        localStorage.setItem("carts",JSON.stringify(carts));
-    })
 
     return (
       <div>
@@ -97,7 +49,8 @@ const AddArticle = (id) => {
             </div>
 
               </div>
-           <div className='part__newsletter'>
+          </div>
+          <div className='part__newsletter'>
               <div className='part__newsletter__first'>
                   <h3>Inscrivez vous à notre Newsletter</h3>
                   <p>Soyez le premier à recevoir les dernières nouvelles sur les tendances, les promotions et bien plus encore !</p>
@@ -110,7 +63,6 @@ const AddArticle = (id) => {
                 <button className='btn__newsletter'>Envoyer</button>
               </div>
               </div>
-          </div>
           <Footer/>
         </div>
 

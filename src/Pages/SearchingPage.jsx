@@ -1,7 +1,6 @@
 import Navbar from "./Navbar";
 import Marquee from "react-fast-marquee";
 import { Link } from "react-router-dom";
-import ProductCart from "../components/ProductCart";
 import Footer from "./Footer";
 import { AddArticle, getAllArticles } from "../Redux/actions";
 import { useEffect, useState } from "react";
@@ -41,7 +40,6 @@ export default function SearchingPage() {
                     <li class="breadcrumb-item active" aria-current="page">Recherche</li>
                 </ol>
                 </nav>
-                <ProductCart/>
                 <div className="container-contents">
                         <div className="part__products">
                         <div className="part__accessories">
