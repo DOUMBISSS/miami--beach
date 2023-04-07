@@ -7,7 +7,8 @@ return (
     <div>
               <div className='footer--header'>
                 <p><i class="fa-solid fa-location-dot"></i> Assinie Mafia</p>
-                <p><i class="fa-solid fa-envelope"></i> www.miami-beach.com</p>
+                <p><i class="fa-solid fa-globe"></i> www.miami-beach.com</p>
+                <p><i class="fa-solid fa-envelope"></i> miami@beach.com</p>
                 <p><i class="fa-brands fa-whatsapp"></i> +225 07 77 88 00 82 </p>
                 <p><i class="fa-brands fa-facebook"></i> Facebook</p>
                 <p><i class="fa-brands fa-instagram"></i> Instagram</p>

@@ -7,25 +7,20 @@ import Marquee from "react-fast-marquee";
 export default function Piscines (){
     return (
       <div>
-      <Marquee className="marquee">
-              I can be a React component, multiple React components, or just some text.
-       </Marquee>
+       <Marquee className="marquee" speed={80}>
+                    OFFRE SPECIALE -20% DE RÉDUCTION* POUR LE WEEK-END DU 26 MAI AU 02 JUIN
+         </Marquee>
   <Navbar/>
+   <div className="cover__wrapper">
+         <h1 className="cover__header">Notre espace de tranquilité,La piscine</h1>
+      </div>
   <div className="container">
-  <nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-      <li class="breadcrumb-item"><Link to='/'>Home</Link></li>
-      <li class="breadcrumb-item active" aria-current="page"> Espaces détentes</li>
-  </ol>
-  </nav>
-  <div className="part__products__header">
-  <h3 className='container__header'>Notre espace de tranquilité,La piscine</h3>
+  <div className='container__content'>
       <p>Vue aeriénne de l'hôtel, 14 chambres dans un écrin de verdure de 2ha.
           Entourée d’une charmante terrasse avec des Transats, Lits Balinais et parasols, notre piscine familliale dans une eau à 30 degré est à votre disposition.
           La deuxième piscine "ZEN" (interdite aux enfants et adolescents) vous offre le cadre parfait pour des moments de détente inoubliables.
           Le service du bar est à votre disposition pour siroter un Cocktail rafraîchissant en vous relaxant et en jouissant du soleil de la Côte D'Ivoire. </p>
-      </div>
-  </div>
+          </div>
       <div className="container__cards">
             <div className="container__images">
                <div className="images_box">
@@ -55,6 +50,7 @@ export default function Piscines (){
                </div>
 
             </div>
+      </div>
       </div>
 <Footer/>
 </div>

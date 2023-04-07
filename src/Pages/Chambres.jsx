@@ -11,23 +11,20 @@ export default function Chambres () {
 
     return (
         <div>
-                <Marquee className="marquee">
-                        I can be a React component, multiple React components, or just some text.
+                <Marquee className="marquee" speed={80}>
+                    OFFRE SPECIALE -20% DE RÉDUCTION* POUR LE WEEK-END DU 26 MAI AU 02 JUIN
                  </Marquee>
             <Navbar/>
+            <div className="cover__wrapper">
+                <h1 className="cover__header">Nos chambres</h1>
+            </div>
             <div className="container">
-            <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><Link to='/'>Home</Link></li>
-                <li class="breadcrumb-item active" aria-current="page">Nos chambres</li>
-            </ol>
-            </nav>
-            <div className="part__products__header">
-            <h3 className='container__header'>Nos chambres</h3>
+            <div className='container__content'>
                 <p>Après avoir métamorphosé la décoration du site, remis en forme certaines chambres, amélioré le confort de celle ci,  <strong> Miami Beach </strong>est fière de vous accueillir.
                         Aménagées et décorées aux couleurs de l’Afrique ; nos huit chambres classiques et nos six suites sont équipées de TV (13 chaines), de télèphonne intra, de la climatisation, et de l'eau chaude sur le réseau d'eau courante de la sodeci.
                         Nous sommes aussi équipés d’une literie de haute qualité, pour votre confort. <strong> Miami Beach </strong> met donc à votre disposition deux types de chambres : </p>
-                </div>
+                        </div>
+                        
                 <div className="container__cards">
                        {homes.map((home) => <div className="cards">
                                 <div className="cards__images">

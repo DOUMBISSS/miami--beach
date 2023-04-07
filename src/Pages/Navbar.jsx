@@ -41,6 +41,7 @@ const affi = ()=> {
               <Link className='liste' to='/chambres'> Chambres </Link>
               <Link className='liste' to='/piscines'>Piscines</Link>
               <Link className='liste' to='/activity'> Activités</Link>
+              <Link className='liste' to='/contact'> Contacts</Link>
             </div>
             <div className='logo--resp'>
               <div className="navbar--logo--resp">
@@ -79,7 +80,10 @@ const affi = ()=> {
                             <Link className='liste' to='/chambres'>Chambres</Link>
                             </div>
                             <div className='menu__content__liste'>
-                            <Link className='liste' to='/activity'>Activités</Link>
+                              <Link className='liste' to='/activity'>Activités</Link>
+                            </div>
+                            <div className='menu__content__liste'>
+                              <Link className='liste' to='/contact'>Contacts</Link>
                             </div>
                           <div className="col-12 col-md-12">
                             <form class="d-flex" role="search">

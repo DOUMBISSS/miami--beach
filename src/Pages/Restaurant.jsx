@@ -10,20 +10,26 @@ export default function Restaurant() {
 
     return (
         <div>
-        <Marquee className="marquee">
-                I can be a React component, multiple React components, or just some text.
-         </Marquee>
+         <Marquee className="marquee" speed={80}>
+                    OFFRE SPECIALE -20% DE RÉDUCTION* POUR LE WEEK-END DU 26 MAI AU 02 JUIN
+        </Marquee>
     <Navbar/>
-    <div className="container">
+    {/* <div className="container">
     <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><Link to='/'>Home</Link></li>
         <li class="breadcrumb-item active" aria-current="page"> Restaurants & bars</li>
     </ol>
     </nav>
+    </div> */}
+    <div className="cover__wrapper">
+        <h1 className="cover__header">Restaurants & bars</h1>
+    </div>
+    <div className="container">
         <div className='container__content'>
-        <h3 className='container__header'> Restaurants & bars</h3>
-              <p> <strong> Miami Beach</strong> vous propose des expériences culinaires mettant vos 5 sens en éveil. Au restaurant, au bar, au bord de la piscine ou les pieds dans l'eau, <strong> Miami Beach</strong> vous offre avec son chef, la possibilité de célébrer les produits de la mer et de la terre, mettant ainsi en valeur le travail des producteurs locaux. Découvrez nos espaces de restauration!:</p>
+        {/* <h3 className='container__header'> Restaurants & bars</h3> */}
+              <p> <strong> Miami Beach</strong> vous propose des expériences culinaires mettant vos 5 sens en éveil. Au restaurant, au bar, au bord de la piscine ou les pieds dans l'eau, <strong> Miami Beach</strong> vous offre avec son chef, la possibilité de célébrer les produits de la mer et de la terre, mettant ainsi en valeur le travail des producteurs locaux. Découvrez nos espaces de restauration: </p>
+              <p>(Wifi , Parkings, Espaces enfants)</p>
         </div>
     </div>
         <div className="container__description">
@@ -46,7 +52,7 @@ export default function Restaurant() {
                     </div>
                     <div className="description">
                         <h6 className="description__title">Room Service</h6>
-                        <p>Disposez d'une cuisine fraîchement préparée et savoureuse dans le confort de la Baie des Sirènes, dans votre chambre, ou dans votre terrasse privée à l'heure qui vous convient.</p>
+                        <p>Disposez d'une cuisine fraîchement préparée et savoureuse dans le confort, dans votre chambre, ou dans votre terrasse privée à l'heure qui vous convient.</p>
                         <p className="horaires">Horaires</p>
                         <p>10:00 jusqu'à tard dans la nuit</p>
                     </div>
@@ -60,7 +66,7 @@ export default function Restaurant() {
                     <div className="description">
                         <h6 className="description__title">Escapades Romantiques</h6>
                         <p>Disposez d'un cadre magnifique préparée et savoureuse pour vos rencontres</p>
-                        <button className="btn__contact">Contactez-nous</button>
+                        <Link to='/contact'><button className="btn__contact">Contactez-nous</button></Link>
                     </div>
 
                 </div>
@@ -72,7 +78,7 @@ export default function Restaurant() {
                     <div className="description">
                         <h6 className="description__title">Évènements privés</h6>
                         <p>Merci de bien vouloir nous contacter pour toute demande d'expérience culinaire inédite (traiteurs, événementiels, meeetings, corporate, fiançailles, mariage, anniversaire, EVJF, etc.)</p>
-                        <button className="btn__contact">Contactez-nous</button>
+                        <Link to='/contact'><button className="btn__contact">Contactez-nous</button></Link>
                     </div>
 
                 </div>
@@ -84,7 +90,7 @@ export default function Restaurant() {
                     <div className="description">
                         <h6 className="description__title"> Jardins aromatiques & potager</h6>
                         <p>Parce que nous souhaitons vous offrir la meilleure des expériences locales, nous utilisons des herbes et des légumes frais pour notre cuisine. Nous nous ferons un plaisir de vous donner une visite personnelle du jardin pour discuter de la saisonnalité de nos ingrédients et de la philosophie derrière nos menus.</p>
-                        <button className="btn__contact">Contactez-nous</button>
+                        <Link to='/contact'><button className="btn__contact">Contactez-nous</button></Link>
                     </div>
 
                 </div>
