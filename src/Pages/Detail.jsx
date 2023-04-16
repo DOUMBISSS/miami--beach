@@ -58,7 +58,7 @@ export default function Detail () {
 
                 <div className="container--right--part">
                         <p className='home__name'>{home.name}</p>
-                        <p>Superbe penthouse de 3 pièces à Riviera mondial béton avec vue sur la lagune </p>
+                        <h5>Descriptions</h5>
                         <p>- chambre principale autonome </p>
                         <p>– toilette visiteur </p>
                         <p>– séjour staffé </p>
