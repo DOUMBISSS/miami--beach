@@ -21,10 +21,10 @@ export default function Detail () {
         <div className="container--header">
             {/* <h4 className="name--article">Iphone 14 Pro Max</h4> */}
           </div>
-              <div className="container--article">
-                <div className="container--article--left--part">
-                  <div className="container--article--left--part--content">
-                    <div className="container--article--left--part--container--image">  
+              <div className="container--home">
+                <div className="container--left--part">
+                  <div className="container--left--part--content">
+                    <div className="container--left--part--container--image">  
                     <div id="carouselExampleControlsNoTouching" className="carousel slide" data-bs-touch="false">
                         <div className="carousel-inner">
                           <div className="carousel-item active">
@@ -56,8 +56,13 @@ export default function Detail () {
                 </div>
                 </div>
 
-                <div className="container--article--right--part">
-                        <p className='label'>{home.name}</p>
+                <div className="container--right--part">
+                        <p className='home__name'>{home.name}</p>
+                        <p>Superbe penthouse de 3 pièces à Riviera mondial béton avec vue sur la lagune </p>
+                        <p>- chambre principale autonome </p>
+                        <p>– toilette visiteur </p>
+                        <p>– séjour staffé </p>
+                        <p>- immense terrasse </p>
                          {/* <h4 className="name--article">{home.description}</h4> */}
                         <p className="price"> à partir de {home.price} FCFA</p>
                         {/* <p className='rating'>3 ratings</p> */}            

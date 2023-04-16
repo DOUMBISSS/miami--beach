@@ -15,9 +15,7 @@ return (
                 
         </div>
           <div className='footer'>
-          <div className='right'>
             <p>Copyright © 2022,Miami-beach </p>
-            </div>
       </div>
     </div>
 
